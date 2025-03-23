@@ -1,0 +1,686 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="description" content=" Hasan, Coming Soon! " />   
+    <meta name="description" content=" Hasan, Coming Soon! " />   
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    
+    <title>Hasan Latif</title>
+
+
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            background-color: #FAFAFA;
+        }
+
+        a {
+            text-decoration: none;
+            color: #F44336;
+        }
+
+        a:hover
+        {
+            color: #B71C1C;
+        }
+
+            a:visited {
+                color: #F44336;
+            }
+
+        .introbanner h1 {
+            font-size:3em;
+        }
+
+        .introbanner .subtitle
+        {
+            font-size:1.4em;
+        }
+
+        .introbanner {
+            width: 100%;
+            height: calc(100vh - 100px);
+            background-color: black;
+            color: white;
+            text-align: center;
+            position: relative;
+            min-height: 300px;
+        }
+
+            .introbanner .inner {
+                z-index: 2;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                display:flex;justify-content:center;align-items:center;                
+            }
+
+                .introbanner .inner .bannercontainer {                    
+                }
+
+            .introbanner h1 {
+            }
+
+
+
+        .scrollbuttonbox {
+            height: 100px;
+            text-align: center;
+            position: relative;
+        }
+
+            .scrollbuttonbox .topbox {
+                height: 50px;
+                margin: 0;
+                padding: 0;
+            }
+
+            .scrollbuttonbox .bottombox {
+                height: 50px;
+                margin: 0;
+                padding: 0;
+            }
+
+            .scrollbuttonbox#introbutton .topbox {
+                background-color: black;
+            }
+
+        .content .scrollbuttonbox .topbox {
+            height: 45px;
+            border-bottom: 5px solid black;
+        }
+
+        .content .scrollbuttonbox .bottombox {
+            height: 45px;
+            border-top: 5px solid black;
+        }
+
+        .scrollbuttonbox .nextbutton {
+            width: 100%;
+            position: absolute;
+            top: 25px;
+        }
+
+        .scrollbuttonbox .scrolldownbutton {                        
+            height: 50px;
+            width: 50px;
+            border-radius: 40px;
+            display: inline-block;
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+            background-color: #F44336;
+            transition: background-color ease-in-out 0.5s, box-shadow ease-in-out 0.5s;
+        }
+
+        .scrolldownbutton:hover {
+            box-shadow: 0 4px 5px 0 rgba(0,0,0,0.16),0 4px 15px 0 rgba(0,0,0,0.12);
+            background-color: #D32F2F;
+        }
+
+
+
+        .scrolldownbutton .sdbcontent {
+            padding-top: 14px;
+            color: white;
+        }
+
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .contentgroup {
+            /*min-height: 95vh;*/
+            max-width: 1000px;
+            display: inline-block;
+            text-align: left;
+            width: 100%;
+        }
+
+        .imagefloat {
+            float: right;
+            max-width: 300px;
+            padding: 10px;
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+            margin: 0 10px 10px 10px;
+        }
+
+            .imagefloat img {
+                width: 100%;
+            }
+
+        .imagebox {
+            display: block;
+            max-width: 400px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+           .imagebox img
+           {
+               width: 100%;
+           }
+
+
+
+        .contentgroup h2 {
+            margin-top: 0;
+        }
+
+
+        header {
+            color: white;
+            width: 100%;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            background-color: black;
+        }
+
+            .menubar .menubaritems {
+                position: relative;
+                text-align: right;
+            }
+
+                .menubar .menubaritems a {
+                    display: inline-block;
+                    padding: 10px;
+                    color: #E0E0E0;
+                }
+
+                    .menubar .menubaritems a:hover {
+                        background-color: #616161;
+                    }
+
+        a.anchor {
+            display: block;
+            position: relative;
+            top: -50px;
+            visibility: hidden;
+        }
+
+        ul 
+        {
+            list-style-type:none;
+            padding:0;
+            margin-left:20px;
+        }
+
+        ul li
+        {
+            padding:8px 0;
+            border-top: 1px solid #E0E0E0;
+        }
+
+        ul li:first-child
+        {
+            border:none;
+        }
+
+
+        canvas#introcanvas{
+            position: absolute;
+            left: 0;
+            right: 0;            
+            width: 100%;
+            height: 100%;            
+            box-sizing:border-box;                        
+        }
+
+        .e-mail:before {
+            content: attr(data-website) "\0040" attr(data-user);
+            unicode-bidi: bidi-override;
+            direction: rtl;
+        }
+
+        .contact {
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .contact .contactitem
+        {
+            display:inline-block;
+            margin:10px 10px;
+            vertical-align: middle;            
+        }
+
+        .contactitem a
+        {
+            display:inline-block;
+        }
+
+        header
+        {
+            height:41px;
+            overflow:hidden;
+        }  
+        
+        :focus {outline:0;}
+
+
+        .publication {
+            background-color: white;
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+        }
+
+            .publication h3 {
+                padding: 10px;
+            }
+
+            .publication .pcontent {
+                margin: 20px;
+            }
+
+            .publication .authors {
+                font-style: italic;
+                margin: 10px 0;
+            }
+
+            .publication .venue {
+                margin: 10px 0;
+            }
+
+            .publication .paperlink {
+                display: inline-block;
+            }
+
+                .publication label, .publication .paperlink a {
+                    padding: 10px;
+                    display: inline-block;
+                    color: #F44336;
+                    margin-bottom: 10px;
+                }
+
+                    .publication label:hover, .publication .paperlink a:hover {
+                        cursor: pointer;
+                        background-color: #f1f1f1;
+                    }
+
+            .publication input[type=checkbox] {
+                display: none;
+            }
+
+        .abstract {
+            padding: 10px 20px;
+        }
+
+        .publication input[type=checkbox]:checked + .abstract {
+            display: block;
+        }
+
+
+        .topcontent {            
+            margin: 10px;
+        }
+
+        .publication .image
+        {
+            text-align:center;
+        }
+
+        @media screen and (min-width: 580px) {
+            .topcontent
+            {
+                display: flex;
+            }
+
+            .topcontent > * {
+                display: inline-block;
+            }
+        }
+
+        .publication .buttons
+        {
+            margin:10px;
+
+        }
+          
+        .publication .topcontent > .description {
+            margin-right: auto;
+        }
+
+
+        .publication .topcontent .image img {
+            max-width: 200px;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <div class="page">
+        <header>
+            <div class="menubar">
+                <div class="menubaritems">
+                    
+                </div>
+            </div>
+        </header>
+        <div class="introbanner">
+            <canvas id="introcanvas"></canvas>
+            <div class="inner">
+                <div class="bannercontainer">
+                    <div class="title">
+                        <h1>Coming Soon</h1>
+                    </div>
+                    <div class="subtitle">
+                        <p>
+			    <br> </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scrollbuttonbox" id="introbutton">
+            <div class="topbox"></div>
+            <div class="bottombox"></div>
+            <div class="nextbutton">
+                <a class="scrolldownbutton" href="#aboutintro">
+                    <div class="sdbcontent">
+                        <i class="material-icons">keyboard_arrow_down</i>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="contentgroup">
+                <a class="anchor" id="aboutintro"></a>
+                <div class="imagefloat">
+                    
+                </div>
+                <h2>About me</h2>
+                <p style="text-align:justify;">
+				      Coming Soon!
+                    <!--I have completed my Ph.D. at the Image and Visual Representation Lab in EPFL, Lausanne, Switzerland. I am simply grateful to have been mentored by the likes of  <a href="https://people.epfl.ch/sabine.susstrunk"> Prof. Sabine Süsstrunk</a>, <a href="https://people.epfl.ch/mathieu.salzmann"> Dr. Mathieu Salzmann</a>, <a href="https://people.epfl.ch/pascal.fua/bio?lang=en"> Prof. Pascal Fua </a> and <a href="http://ccmp.knu.ac.kr/people.html"> Prof. Anand Paul </a>. I love to work on interdisciplinary subjects, currently applying deep learning to reconfigure 19th to 20th century comics to digital media. I have also worked with satellites and with the evolutionary intelligence mechanism of bilogical plants (during my Masters).-->
+                   <!--</a> I am affiliated to POSTECH, Pohang University of Science and Technology, South Korea and Samsung R&D. <p>To put it simply, I develop intelligent data driven models such that the resulting algorithm can understand imperceptible motions (invisible to a human eye) from just a video. This motion signal is visible to the computer as the algorithm magnifies the natural movement in every pixel of the video content. It then can be used in two ways a)retrieve sound (aka visible sound) from that motion as done by MIT CSAIL -VISUAL MICROPHONE b) analyse the movement of structures to make behavioral predictions of such structures during calamities.</p>
+
+					<p>Also, in my previous work, I have worked on an evolutionary learning algorithm based on biological plant intelligence to solve optimization problems. The algorithm is interesting as it is motivated from something separate from neural nets and the concept of a human brain. It is based on the intelligence of biological plants in non-stationary environments that follows the universal Fibonacci series and Golden Ratio. The developed evolutionary machine learning algorithm was applied to medical imaging and  terrestrial image processing problems.</p>
+                    During this time, I was a machine learning researcher at Connected Computing and Media Processing Lab, Kyungpook National University, South Korea.-->
+                    <!--<a href="http://http://en.knu.ac.kr/main/main.htm/">Kyungpook National University</a>,
+                    <a href="http://www.postech.ac.kr/eng/">POSTECH</a>--> 
+                </p>
+                <!--<p>
+                    I have completed my MS in Artificial Intelligence from Kyungpook National University, specializing in optimization and evolutionary machine learning. My supervisor was <a href="http://ccmp.knu.ac.kr/member/professor.html">Prof. Anand Paul.</a>-->
+                    
+                </p >
+                <p style="text-align:justify;"></p>
+                <p style="text-align:justify;">
+                    
+                    
+                </p>
+				
+				                                                         
+
+
+                <div class="contact">
+                    <!--<div class="contactitem">
+                        
+                        <script id="twitter-wjs" src="http://platform.twitter.com/widgets.js"></script>
+                        <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+                    </div>-->
+                    <div class="contactitem">
+                        <a href="https://twitter.com/#" target="_blank">
+                            <img src="twitter.png" width="70" height="70" border="0" >
+                        </a>                    
+                    </div>
+                    <div class="contactitem">
+                        <a href="https://www.linkedin.com/#" target="_blank">
+                            <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_viewmy_160x33.png" width="170" height="36" border="0" alt="View my LinkedIn profile">
+                        </a>                    
+                    </div>
+					<div class="contactitem">
+						<a href="https://github.com/" target="_blank">
+							<img src="github.jpg" width="70" height="70" border="0" alt="View my Github profile">
+							
+						</a>
+					</div>
+                    <div class="contactitem">
+                        <a href="https://scholar.google.com/" target="_blank">
+                            <img src="scholar.png" width="70" height="70" border="0" alt="View my Google Scholar profile">
+                            
+                        </a>
+                    </div>
+                    <div class="contactitem">
+                        <a href="#" target="_blank">
+                            <img src="" width="70" height="70" border="0" alt="">
+                            
+                        </a>
+                    </div>
+                    
+                    <!--<div class="contactitem">
+                        <p> <b>Email:</b>  </p>
+                    </div>-->
+                </div>
+
+                <div class="scrollbuttonbox">
+                    <div class="topbox"></div>
+                    <div class="bottombox"></div>
+                    <div class="nextbutton">
+                        <a class="scrolldownbutton" href="#news">
+                            <div class="sdbcontent">
+                                <i class="material-icons">keyboard_arrow_down</i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+  
+<!-- Footer -->
+					<section id="footer">
+						<div class="container">
+							<ul class="copyright">
+								<li>&copy;.</li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+        <script>
+            $(function () {
+                $('a[href*="#"]:not([href="#"])').click(function () {
+                    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                        var target = $(this.hash);
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                        if (target.length) {
+                            $('html, body').animate({
+                                scrollTop: target.offset().top
+                            }, 1000);
+                            return false;
+                        }
+                    }
+                });
+            });
+        </script>
+    </div>
+
+
+
+    <script>
+        $(document).ready(function () {
+            //$('#navbar').load('./header.html');
+
+            $(".publication input").each(function () { $(this).next(".abstract").hide(); });
+
+            $(".publication input").change(function () {
+                if ($(this).is(':checked')) {
+                    $(this).next(".abstract").slideDown();
+                }
+                else {
+                    $(this).next(".abstract").slideUp();
+                }
+            });
+        });
+    </script>
+    <noscript>
+        <style>
+            .abstract
+            {
+                 display:none; 
+            }
+        </style>
+    </noscript>
+
+
+
+
+
+    <script>
+        $(document).ready(function () {
+            var mainCanvas = document.querySelector("#introcanvas");
+            var mainContext = mainCanvas.getContext("2d");
+
+            mainCanvas.width = $('#introcanvas').width();
+            mainCanvas.height = $('#introcanvas').height();
+            var canvasWidth = mainCanvas.width;
+            var canvasHeight = mainCanvas.height;
+
+            var angle = 0;
+
+            var requestAnimationFrame = window.requestAnimationFrame ||
+                            window.mozRequestAnimationFrame ||
+                            window.webkitRequestAnimationFrame ||
+                            window.msRequestAnimationFrame;
+
+
+            $(window).resize(function () {
+                mainCanvas.width = $('#introcanvas').width();
+                mainCanvas.height = $('#introcanvas').height();
+                canvasWidth = mainCanvas.width;
+                canvasHeight = mainCanvas.height;
+            });
+
+            //  Create points
+            var nPoints = 50;
+            var pointArrayX = new Float32Array(nPoints);
+            var pointArrayY = new Float32Array(nPoints);
+            var pointColourIndex = [];
+            var radX = [];
+            var radY = [];
+            var minRadius = 100;
+            var maxRadius = 500;
+            
+            var colours = ["#ee8300", "#44f89e", "#44f0ed"];            
+
+            for (var i = 0; i < nPoints; i++) {
+
+                //  Points within a cirlce
+                var r = minRadius + Math.floor(Math.random() * maxRadius);
+                var angle = (2 * Math.PI) * Math.random();
+                pointArrayX[i] = (Math.cos(angle) * r);
+                pointArrayY[i] = (Math.sin(angle) * r);
+
+                radX.push(2 * (Math.random()-0.5));
+                radY.push(2 * (Math.random() - 0.5));
+
+                pointColourIndex.push(Math.floor(Math.random() * colours.length));
+            }
+            
+            //  Build connections
+            var nConnections = 200;
+            var connections = [];
+            for (var i = 0 ; i < nConnections; i++) {
+                var idx1 = Math.floor((Math.random() * nPoints));
+                var idx2 = Math.floor((Math.random() * nPoints));
+
+                //  Try to get a unique connection 10 times, abort if failed
+                var abortCount = 0;
+                while (idx1 == idx2 && abortCount < 10) {
+                    idx2 = Math.floor((Math.random() * nPoints));
+                    abortCount++; 
+                }
+
+
+                connections.push({ connection1: idx1, connection2: idx2 });
+            }
+
+            function getPointLocationX(index, movementAngle) {
+                //  Index into arrays
+                //  Movement percentage between 0 2PI
+                var x = pointArrayX[index] + (100 * Math.cos(3 * movementAngle * (index/50)));                
+                return x;
+                
+            }
+
+            function getPointLocationY(index, movementAngle) {
+                //  Index into arrays
+                //  Movement percentage between 0 2PI
+
+                var y = pointArrayY[index] + (150 * Math.sin(2 * movementAngle * (index/50)));
+                return y;
+            }
+
+            function drawGraph() {
+                mainContext.clearRect(0, 0, canvasWidth, canvasHeight);
+
+                // color in the background
+                mainContext.fillStyle = "#000000";
+                mainContext.fillRect(0, 0, canvasWidth, canvasHeight);
+                mainContext.save();
+                
+                //  Rotation
+                mainContext.translate(canvasWidth / 2, canvasHeight / 2);
+                mainContext.rotate(angle / 10);
+                mainContext.translate(-canvasWidth / 2, -canvasHeight / 2);                
+                mainContext.globalAlpha = 0.3;
+
+                var centerX = canvasWidth / 2;
+                var centerY = canvasHeight / 2;
+
+                //  Draw connections
+                mainContext.beginPath();
+                mainContext.strokeStyle = "#FFAB40";                
+                mainContext.translate(centerX, centerY);
+                connections.forEach(function (connection) {
+                    dx1 = getPointLocationX(connection.connection1, angle);
+                    dy1 = getPointLocationY(connection.connection1, angle);
+                    dx2 = getPointLocationX(connection.connection2, angle);
+                    dy2 = getPointLocationY(connection.connection2, angle);
+
+                    mainContext.lineTo(dx1, dy1);
+                    mainContext.moveTo(dx2, dy2);                    
+                });
+
+                mainContext.stroke();
+
+                //  Draw points
+                var w = 4;
+                for (var i = 0; i < nPoints; i++) {
+                    var x1 = getPointLocationX(i, angle);
+                    var y1 = getPointLocationY(i, angle);                    
+                    mainContext.fillStyle = colours[pointColourIndex[i]];
+                    mainContext.fillRect(x1 - (w / 2), y1 - (w / 2), w, w);
+                }
+
+                mainContext.restore();
+
+                angle += Math.PI / 1024;
+
+                requestAnimationFrame(drawGraph);
+            }
+
+            drawGraph();
+
+        });
+
+    </script>
+</body>
+
+</html>
